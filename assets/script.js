@@ -7,16 +7,17 @@ var button=$('button');
 var cityInfo=[];
 
 // function instructer provided to create dynamical html easier
-function addToDOM(tag, content, appendTo){
-    const elem = document.createElement(tag);
-    elem.textContent = content;
-    document.querySelector(appendTo).appendChild(elem);
-}
-  
+
 function createForecast(){
 
 }
 
+function cityOnSide(){
+    for(var i=0;i<input.length;i++){
+     var cities=input[i];
+     addToDOM()
+    }
+}
 
 
 
@@ -29,6 +30,12 @@ button.on('click', function(){
     cityInfo.push(input)
     // forecast function
     // function to put cites searched on the side 
+    console.log(cityInfo)
 })
     
-console.log(cityInfo)
+function addToDOM(tag, content, appendTo){
+    const elem = document.createElement(tag);
+    elem.textContent = content;
+    document.querySelector(appendTo).appendChild(elem);
+}
+  
