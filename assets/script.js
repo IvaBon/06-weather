@@ -5,7 +5,12 @@ var main=$('main');
 var button=$('button');
 let city=document.getElementById('fillcity');
 let today=moment().format('l');
-console.log(today)
+let tmr=moment().add(1,'days').format('l');
+let tmr2=moment().add(2,'days').format('l');
+let tmr3=moment().add(3,'days').format('l');
+let tmr4=moment().add(4,'days').format('l');
+let tmr5=moment().add(5,'days').format('l');
+
 
 function getApi(){
     var input=document.getElementById('text').value;
@@ -47,52 +52,92 @@ function getApi(){
              weatherDays.push( tsObj )
              currDay = dateNum
           }
-         console.log(weatherDays)
+        //  console.log(weatherDays)
         })
-    })
-    .then(function(data){
         let title=document.getElementById('fillforecast')
         title.textContent='5 Day Forecast:'
         
-    
+        let date=document.getElementById('date1')
+        let date2=document.getElementById('date2')
+        let date3=document.getElementById('date3')
+        let date4=document.getElementById('date4')
+        let date5=document.getElementById('date5')
+
+        let temp1=document.getElementById('temp1')
+        let temp2=document.getElementById('temp2')
+        let temp3=document.getElementById('temp3')
+        let temp4=document.getElementById('temp4')
+        let temp5=document.getElementById('temp5')
+        let realTemp1=((weatherDays[0].main.temp-273.15)*1.8)+32;
+        let realTemp2=((weatherDays[1].main.temp-273.15)*1.8)+32;
+        let realTemp3=((weatherDays[2].main.temp-273.15)*1.8)+32;
+        let realTemp4=((weatherDays[3].main.temp-273.15)*1.8)+32;
+        let realTemp5=((weatherDays[4].main.temp-273.15)*1.8)+32;
+
+        let wind1=document.getElementById('wind1')
+        let wind2=document.getElementById('wind2')
+        let wind3=document.getElementById('wind3')
+        let wind4=document.getElementById('wind4')
+        let wind5=document.getElementById('wind5')
+
+        let humidity1=document.getElementById('humidity1')
+        let humidity2=document.getElementById('humidity2')
+        let humidity3=document.getElementById('humidity3')
+        let humidity4=document.getElementById('humidity4')
+        let humidity5=document.getElementById('humidity5')
+
+        date.textContent=tmr;
+        date2.textContent=tmr2;
+        date3.textContent=tmr3;
+        date4.textContent=tmr4;
+        date5.textContent=tmr5;
+
+        temp1.textContent=('Temp: '+ realTemp1.toFixed(2)+"°F")
+        temp2.textContent=('Temp: '+ realTemp2.toFixed(2)+"°F")
+        temp3.textContent=('Temp: '+ realTemp3.toFixed(2)+"°F")
+        temp4.textContent=('Temp: '+ realTemp4.toFixed(2)+"°F")
+        temp5.textContent=('Temp: '+ realTemp5.toFixed(2)+"°F")
+
+        wind1.textContent=("Wind: " + weatherDays[0].wind.speed+ "MPH");
+        wind2.textContent=("Wind: " + weatherDays[1].wind.speed+ "MPH");
+        wind3.textContent=("Wind: " + weatherDays[2].wind.speed+ "MPH");
+        wind4.textContent=("Wind: " + weatherDays[3].wind.speed+ "MPH");
+        wind5.textContent=("Wind: " + weatherDays[4].wind.speed+ "MPH");
+
+        humidity1.textContent=("Humidity: " + weatherDays[0].main.humidity+"%");
+        humidity2.textContent=("Humidity: " + weatherDays[1].main.humidity+"%");
+        humidity3.textContent=("Humidity: " + weatherDays[2].main.humidity+"%");
+        humidity4.textContent=("Humidity: " + weatherDays[3].main.humidity+"%");
+        humidity5.textContent=("Humidity: " + weatherDays[4].main.humidity+"%");
+
 
     })
-    .then(function(data){
-      
-        
-
-    })
-}
-
-function getWeatherDays(){
     
 }
 
 
-
-
-function createForecastPage(){
-    
-}
-
-
+var cities=[''];
+var savedCities=[];
 function cityOnSide(){
-    for(var i=0;i<input.length;i++){
-     var cities=input[i];
-     addToDOM()
-    }
+    
+    var inputValue=document.getElementById('text').value;
+    cities.push(inputValue)
+    
+    localStorage.setItem('city',JSON.stringify(cities))
 }
 
+function pullText(){
+    if(JSON.parse(localStorage.getItem("city"))){
+        savedCities = JSON.parse(localStorage.getItem("city")); 
+    } 
+}
 
-
-
-
-
-
+pullText();
+console.log(savedCities)
 button.on('click', function(){
     getApi()
-  
-    
+    cityOnSide()
+    pullText()
     // // forecast function
     // // function to put cites searched on the side 
     // console.log(cityInfo)
