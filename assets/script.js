@@ -10,13 +10,24 @@ let tmr2=moment().add(2,'days').format('l');
 let tmr3=moment().add(3,'days').format('l');
 let tmr4=moment().add(4,'days').format('l');
 let tmr5=moment().add(5,'days').format('l');
+var input=document.getElementById('text').value;
+var random=[];
+
 
 
 function getApi(){
+    
     var input=document.getElementById('text').value;
+    var newvalue=[];
     
     let api='cb3d6881c21945a5b7f3e19679beda75'
-    let cityName= input;
+    let cityName='';
+    if(input){
+        cityName=random[0];
+    } else {
+        cityName=input;
+    }
+    
     var requestUrl=`http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${api}`
     
     fetch(requestUrl)
@@ -121,12 +132,16 @@ function getApi(){
 }
 
 
+
+
+
 button.on('click', function(){
 
     getApi()
     var items=[];
-    var input=document.getElementById('text').value;
-        localStorage.setItem('city',JSON.stringify(input))
+    let input=document.getElementById('text').value;
+    input.replaceAll("",);
+        localStorage.setItem('city',(input))
         console.log[items]
         
         
@@ -138,16 +153,22 @@ button.on('click', function(){
             
             body.append(newvalue);
             newvalue.setAttribute('class', 'newButton')
+            newvalue.setAttribute('id', 'newB')
             newvalue.setAttribute('type', 'button')
             
             newvalue.textContent=localStorage.getItem('city')
             console.log(newvalue)
-
-            newvalue.addEventListener('click',function(){
-                
+            newvalue.addEventListener('click',function(event){
+                event.preventDefault();
+                var newvalue=document.getElementById('newB').textContent;
+                newvalue.replaceAll('',);
+                random.push(newvalue)   
+                console.log(random)        
                 getApi()
-                console.log('click')
+                
             })
+            
+            
         }
         
     // setCity();
