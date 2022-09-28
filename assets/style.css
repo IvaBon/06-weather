@@ -1,5 +1,11 @@
 
 .container{
     /* text-align: left; */
-    outline: 5px solid black;
+    /* outline: 5px solid black; */
+}
+
+header{
+    text-align: center;
+    background-color: black;
+    color: white;
 }

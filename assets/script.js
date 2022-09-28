@@ -14,8 +14,9 @@ let tmr5=moment().add(5,'days').format('l');
 
 function getApi(){
     var input=document.getElementById('text').value;
+    
     let api='cb3d6881c21945a5b7f3e19679beda75'
-    let cityName= input
+    let cityName= input;
     var requestUrl=`http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${api}`
     
     fetch(requestUrl)
@@ -110,34 +111,48 @@ function getApi(){
         humidity4.textContent=("Humidity: " + weatherDays[3].main.humidity+"%");
         humidity5.textContent=("Humidity: " + weatherDays[4].main.humidity+"%");
 
+        
+        
+        
 
+        
     })
     
 }
 
 
-var cities=[''];
-var savedCities=[];
-function cityOnSide(){
-    
-    var inputValue=document.getElementById('text').value;
-    cities.push(inputValue)
-    
-    localStorage.setItem('city',JSON.stringify(cities))
-}
-
-function pullText(){
-    if(JSON.parse(localStorage.getItem("city"))){
-        savedCities = JSON.parse(localStorage.getItem("city")); 
-    } 
-}
-
-pullText();
-console.log(savedCities)
 button.on('click', function(){
+
     getApi()
-    cityOnSide()
-    pullText()
+    var items=[];
+    var input=document.getElementById('text').value;
+        localStorage.setItem('city',JSON.stringify(input))
+        console.log[items]
+        
+        
+        for(var i=0; i< localStorage.length;i++){
+            items.push(localStorage)
+            
+            let body=document.getElementById('append');
+            let newvalue=document.createElement("button");
+            
+            body.append(newvalue);
+            newvalue.setAttribute('class', 'newButton')
+            newvalue.setAttribute('type', 'button')
+            
+            newvalue.textContent=localStorage.getItem('city')
+            console.log(newvalue)
+
+            newvalue.addEventListener('click',function(){
+                
+                getApi()
+                console.log('click')
+            })
+        }
+        
+    // setCity();
+    // pullText();
+
     // // forecast function
     // // function to put cites searched on the side 
     // console.log(cityInfo)
