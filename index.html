@@ -12,21 +12,38 @@
     <header>
         <h1>Weather Dashboard</h1>
     </header>
-    <section>
-        <aside>
-            <h2>Search for a City:</h2>
-            <form>
-                <input type="text" id="text"></input>
-                <button type="button">Search</button>
-            </form>
-        </aside>
-        <main>
-            <div>
-                <h2>city and date</h2>
-                <p>temp:</p>
-                <p>wind:</p>
-                <p>huminditiy:</p>
+    <section class='container'>
+        <main class='row'>
+            <div class='col-3'>
+                <h2 class=>Search for a City:</h2>
+                 <form>
+                    <input type="text" id="text"></input>
+                    <button type="button">Search</button>
+                </form>
+                <p> this is werhe i push serached items</p>
+                <p> this is werhe i push serached items</p>
+                <p> this is werhe i push serached items</p>
+                <p> this is werhe i push serached items</p>
             </div>
+            <div class="col-9">
+                <div>
+                    <h2 id="fillcity"></h2>
+                    <p id="temp"></p>
+                    <p id="wind"></p>
+                    <p id="humidity"></p>
+                </div>
+                <h3 id="fillforecast"></h3>
+                <div class="d-flex">
+                  
+                    <h5 id="date1"> 9/27/22<p id="forecast1">temp: wind humidity</p></h5>
+                    <h5 id="date2"> 9/27/22<p id="forecast2">temp: wind humidity</p></h5>
+                    <h5 id="date3"> 9/27/22<p id="forecast3">temp: wind humidity</p></h5>
+                    <h5 id="date4"> 9/27/22<p id="forecast4">temp: wind humidity</p></h5>
+                    <h5 id="date5"> 9/27/22<p id="forecast5">temp: wind humidity</p></h5>
+                  
+                </div>
+            </div>
+        
         </main>
     </section>
 
@@ -35,6 +52,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src='./assets/script.js'></script>
 </body>
 </html>
