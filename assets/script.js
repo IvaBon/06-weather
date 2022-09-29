@@ -4,7 +4,7 @@
 var main=$('main');
 var button=$('button');
 let city=document.getElementById('fillcity');
-let today=moment().format('l');
+let today=moment().format('(M/DD/YYYY)');
 let tmr=moment().add(1,'days').format('l');
 let tmr2=moment().add(2,'days').format('l');
 let tmr3=moment().add(3,'days').format('l');
