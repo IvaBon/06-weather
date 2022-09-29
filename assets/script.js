@@ -21,12 +21,13 @@ function getApi(){
     var newvalue=[];
     
     let api=''
-    let cityName='';
-    if(!input){
-        cityName=random;
-    } else {
-        cityName=input;
-    }
+    let cityName=input;
+    // attempt to make other button work
+    // if(!input){
+    //     cityName=random;
+    // } else {
+    //     cityName=input;
+    // }
     
     var requestUrl=`http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=cb3d6881c21945a5b7f3e19679beda75`
     
@@ -140,7 +141,7 @@ button.on('click', function(){
     getApi()
     var items=[];
     let input=document.getElementById('text').value;
-    input.replaceAll("",);
+    // input.replaceAll("",);
         localStorage.setItem('city',(input))
         console.log[items]
         
@@ -158,15 +159,15 @@ button.on('click', function(){
             
             newvalue.textContent=localStorage.getItem('city')
             console.log(newvalue)
-            newvalue.addEventListener('click',function(event){
-                event.preventDefault();
-                var newvalue=document.getElementById('newB').textContent;
-                newvalue.replaceAll('',);
-                random.push(newvalue)   
-                console.log(random)        
-                getApi()
+            // newvalue.addEventListener('click',function(event){
+            //     event.preventDefault();
+            //     var newvalue=document.getElementById('newB').textContent;
+            //     newvalue.replaceAll('',);
+            //     random.push(newvalue)   
+            //     console.log(random)        
+            //     getApi()
                 
-            })
+            // })
             
             
         }
