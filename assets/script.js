@@ -154,20 +154,20 @@ button.on('click', function(){
             
             body.append(newvalue);
             newvalue.setAttribute('class', 'newButton')
-            newvalue.setAttribute('id', 'newB')
+            // newvalue.setAttribute('id', 'newB')
             newvalue.setAttribute('type', 'button')
             
             newvalue.textContent=localStorage.getItem('city')
             console.log(newvalue)
-            // newvalue.addEventListener('click',function(event){
-            //     event.preventDefault();
-            //     var newvalue=document.getElementById('newB').textContent;
-            //     newvalue.replaceAll('',);
-            //     random.push(newvalue)   
-            //     console.log(random)        
-            //     getApi()
+            newvalue.addEventListener('click',function(event){
+                event.preventDefault();
+                var newvalue=document.getElementById('newB').textContent;
+                newvalue.replaceAll('',);
+                random.push(newvalue)   
+                console.log(random)        
+                getApi()
                 
-            // })
+            })
             
             
         }
