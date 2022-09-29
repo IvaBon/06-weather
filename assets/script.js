@@ -20,7 +20,7 @@ function getApi(){
     var input=document.getElementById('text').value;
     var newvalue=[];
     
-    let api='cb3d6881c21945a5b7f3e19679beda75'
+    let api=''
     let cityName='';
     if(!input){
         cityName=random;
@@ -28,7 +28,7 @@ function getApi(){
         cityName=input;
     }
     
-    var requestUrl=`http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${api}`
+    var requestUrl=`http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=cb3d6881c21945a5b7f3e19679beda75`
     
     fetch(requestUrl)
     .then(function(response){
