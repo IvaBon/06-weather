@@ -22,8 +22,8 @@ function getApi(){
     
     let api='cb3d6881c21945a5b7f3e19679beda75'
     let cityName='';
-    if(input){
-        cityName=random[0];
+    if(!input){
+        cityName=random;
     } else {
         cityName=input;
     }
