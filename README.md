@@ -1,15 +1,13 @@
 # Weather-Dashboard
 
 ## Description
-
-When you open the page, the current time and date are displayed at the top of the screen. As you scroll down you can see timeblocks that go from 9-5. Each timeblock is color coded so that you can see the past time, current time, and future time. When you click the timeblock you can type out an event and click save to save the event to local storage. Then if you refresh the page the text event that you wrote should stay on the screen.
-
+When you search for a city you will be presented with the current and future conditions for that city. Then you are presented with the temperature, wind speed, and the humidity for that city. You will see the five day forecast for that city with the same values. When you search for another city you will be precented with the same values for that city.
 ## Link 
 
-<a href="https://ivabon.github.io/05-day-scheduler/">link to website </a>
+<a href="https://ivabon.github.io/06-weather/">link to website </a>
 
 ## Screenshot 
 
-![screenshot of webpage](ivabon.github.io_05-day-scheduler_.png)
+![screenshot of webpage](assets/_C__Users_ivanb_bootcamp_homwork_06-weather_index.html.png)
 
 
